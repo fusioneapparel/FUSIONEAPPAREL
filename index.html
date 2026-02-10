@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <title>My Shop</title>
+</head>
+<body>
+
+<h2>Product: T-Shirt - ₱299</h2>
+
+<form id="orderForm">
+  <input type="text" id="name" placeholder="Pangalan" required><br><br>
+  <input type="text" id="address" placeholder="Address" required><br><br>
+  <input type="text" id="phone" placeholder="Contact Number" required><br><br>
+
+  <button type="button" onclick="checkout()">Checkout via Messenger</button>
+</form>
+
+<script>
+function checkout() {
+  let name = document.getElementById("name").value;
+  let address = document.getElementById("address").value;
+  let phone = document.getElementById("phone").value;
+
+  let message = 
+    "ORDER DETAILS:%0A" +
+    "Name: " + name + "%0A" +
+    "Address: " + address + "%0A" +
+    "Contact: " + phone + "%0A" +
+    "Product: T-Shirt ₱299";
+
+  // PALITAN mo ito ng FB Page username mo
+  let fbPage = "https://m.me/YOURFBPAGENAME?text=" + message;
+
+  window.open(fbPage, "_blank");
+}
+</script>
+
+</body>
+</html>
